@@ -9,7 +9,8 @@ import English from './languages/en-US.json';
 
 const local = navigator.language;
 
-let lang;
+// eslint-disable-next-line
+let lang
 
 if (local === "en-US") {
   lang = English;
@@ -18,9 +19,9 @@ if (local === "en-US") {
 }
 
 ReactDOM.render(
-<IntlProvider locale={local} messages={Spanish}>
+<IntlProvider locale="es-ES" messages={Spanish}>
   <React.StrictMode>
-    <App />
+    <App date={Date.now()}/>
   </React.StrictMode>
 </IntlProvider>, document.getElementById('root')
 );
