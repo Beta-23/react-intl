@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { IntlProvider } from 'react-intl';
-import Spanish from './languages/es-ES.json';
-import English from './languages/en-US.json';
+import Spanish from '../languages/es-ES.json';
+import English from '../languages/en-US.json';
 
 const Context = React.createContext();
 
@@ -33,10 +33,10 @@ const Wrapper = (props) => {
     return (
         <Context.Provider value={{ locale, selectLang }}>
             <IntlProvider messages={messages} locale={locale}>
-                {props.childern}
+                {props.children}
             </IntlProvider>
         </Context.Provider>
-    )
+    );
 }
 
 export default Wrapper;
